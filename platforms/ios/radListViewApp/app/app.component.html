@@ -1,13 +1,11 @@
-<GridLayout orientation="vertical" rows="auto, *, auto" exampleTitle toggleNavButton>
+<GridLayout>
      <!-- >> angular-listview-reorder -->
     <RadListView row="1" [items]="dataItems" itemReorder="true" (itemReordered)="onItemReordered($event)">
      <!-- << angular-listview-reorder -->
-        <template tkListItemTemplate let-item="item">
-            <GridLayout class="listItemGridLayout">
-                <StackLayout orientation="vertical" col="0">
+        <template tkListItemTemplate let-item="item" let-odd="odd" let-even="even">
+                <StackLayout orientation="vertical" col="0" [class.odd]="odd" [class.even]="even">
                     <Label class="nameLabel" [text]="item.name"></Label>
                 </StackLayout>
-            </GridLayout>
         </template>
     </RadListView>
 </GridLayout>

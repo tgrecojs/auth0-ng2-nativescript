@@ -2,16 +2,18 @@
 import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-import { LISTVIEW_DIRECTIVES } from 'nativescript-telerik-ui-pro/listview/angular';
-import { ServicesModule } from './service.module';
+import { ExampleService } from './example.service';
+/** Import LISTVIEW_DIRECTIVES from nativescript-telerik-ui/listview/angular */
+import { LISTVIEW_DIRECTIVES } from 'nativescript-telerik-ui/listview/angular';
+
 
 @NgModule({
     declarations: [
         LISTVIEW_DIRECTIVES,
         AppComponent],
     bootstrap: [AppComponent],
-    imports: [NativeScriptModule, 
-    ServicesModule.forRoot()]
+    imports: [NativeScriptModule],
+    providers: [ExampleService]
 })
 class AppComponentModule {}
 

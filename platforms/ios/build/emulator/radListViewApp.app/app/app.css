@@ -1,8 +1,13 @@
 ﻿@import '~/css/core.light.css'; 
 
 button, label, stack-layout {
-    horizontal-align: center;    
+   
 }
+.nameLabel {
+    font-size: 20;
+}
+
+
 
 button {
     font-size: 36;
@@ -19,3 +24,7 @@ button {
     text-align: center;
     margin: 0 20;
 } 
+
+template {
+    background: blue;
+}

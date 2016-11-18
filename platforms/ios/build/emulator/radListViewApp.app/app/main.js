@@ -3,7 +3,8 @@
 var platform_1 = require("nativescript-angular/platform");
 var core_1 = require("@angular/core");
 var app_component_1 = require("./app.component");
-var angular_1 = require('nativescript-telerik-ui/listview/angular');
+var angular_1 = require('nativescript-telerik-ui-pro/listview/angular');
+var service_module_1 = require('./service.module');
 var AppComponentModule = (function () {
     function AppComponentModule() {
     }
@@ -13,7 +14,8 @@ var AppComponentModule = (function () {
                 angular_1.LISTVIEW_DIRECTIVES,
                 app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent],
-            imports: [platform_1.NativeScriptModule],
+            imports: [platform_1.NativeScriptModule,
+                service_module_1.ServicesModule.forRoot()]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponentModule);

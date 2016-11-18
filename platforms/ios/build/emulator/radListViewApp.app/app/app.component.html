@@ -1,7 +1,13 @@
-<StackLayout>
-    <Label text="Tap the button" class="title"></Label>
-    
-    <Button text="TAP ME" (tap)="onTap()"></Button>
-
-    <Label [text]="message" class="message" textWrap="true"></Label>
-</StackLayout>
+<GridLayout>
+     <!-- >> angular-listview-reorder -->
+    <RadListView row="1" [items]="dataItems" itemReorder="true" (itemReordered)="onItemReordered($event)">
+     <!-- << angular-listview-reorder -->
+        <template tkListItemTemplate let-item="item" let-odd="odd" let-even="even">
+                <StackLayout orientation="vertical" col="0" [class.odd]="odd" [class.even]="even">
+                    <Label class="nameLabel" [text]="item.name" >
+                        <input value="username" (input)="username = $event.target.value">         
+                    </Label>
+                </StackLayout>
+        </template>
+    </RadListView>
+</GridLayout>
